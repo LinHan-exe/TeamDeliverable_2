@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>View Statistics - BET</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tracker.html">Track Expenses</a></li>
+                <li><a href="statistics.html">View Statistics</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Expense Statistics</h1>
+        <div id="messageContainer">
+            <p id="startMessage">Start Tracking to see statistics</p>
+        </div>
+        <div id="chartContainer" style="position: center">
+            <canvas id="expenseChart"></canvas>
+        </div>
+    </main>
+    <footer>
+        <p>Contact us at email@email.com</p>
+    </footer>
+    <script src="script1.js"></script>
+</body>
+</html>
