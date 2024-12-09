@@ -3,16 +3,20 @@ const expenseList = JSON.parse(localStorage.getItem('expenseList')) || [];
 
 const messageContainer = document.getElementById('messageContainer');
 const chartContainer = document.getElementById('chartContainer');
+const barChartContainer = document.getElementById('budgetBarChart').parentElement;
 
 function initializeStatistics() {
     if (expenseList.length === 0) {
         // If no expenses, show the start message
         messageContainer.style.display = 'block';
         chartContainer.style.display = 'none';
+        barChartContainer.style.display = 'none';
     } else {
         // If expenses exist, hide the message and show the chart
         messageContainer.style.display = 'none';
         chartContainer.style.display = 'block';
+        barChartContainer.style.display = 'block';
+        createBarChart();
         createPieChart();
     }
 }
@@ -43,6 +47,7 @@ function createPieChart() {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             title: {
                 display: true,
                 text: 'Expense Distribution'
@@ -51,5 +56,54 @@ function createPieChart() {
     });
 }
 
+// Function to create Bar Chart
+function createBarChart() {
+    const barChartCtx = document.getElementById('budgetBarChart').getContext('2d');
+  
+    // Extract categories and amounts from the data
+    const categoryTotals = {};
+    expenseList.forEach(expense => {
+        if (categoryTotals[expense.category]) {
+            categoryTotals[expense.category] += expense.amount;
+        } else {
+            categoryTotals[expense.category] = expense.amount;
+        }
+    });
+  
+    // Create the bar chart
+    new Chart(barChartCtx, {
+      type: 'bar',
+      data: {
+        labels: Object.keys(categoryTotals),
+        datasets: [{
+          label: 'Budgeted Amount ($)',
+          data: Object.values(categoryTotals),
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top' // Adjust legend position
+          },
+          tooltip: {
+            enabled: true
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  }
+
+  
 // Initialize the statistics when the page loads
 document.addEventListener('DOMContentLoaded', initializeStatistics);
