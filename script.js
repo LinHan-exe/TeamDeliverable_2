@@ -1,7 +1,7 @@
 // global variables
-let totalBudget = 0;
-let currentBalance = 0;
-let expenseList = [];
+var totalBudget = 0;
+var currentBalance = 0;
+var expenseList = [];
 
 // sets document elements to variables here
 const budgetForm = document.getElementById('budgetForm');
