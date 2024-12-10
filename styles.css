@@ -1,19 +1,20 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-header {
-    background-color: #4CAF50;
+ }
+ 
+ 
+ header {
+    background-color: #0C3C26;
     color: white;
     text-align: center;
     padding: 1rem;
-}
-
-nav{
+ }
+ 
+ 
+ nav{
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -22,9 +23,10 @@ nav{
     margin: 0 10px;
     color: white;
     text-decoration: none;
-}
-
-ul {
+ }
+ 
+ 
+ ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -33,93 +35,112 @@ ul {
     margin: 0 10px;
     color: white;
     text-decoration: none;
-}
-li {
+ }
+ li {
     margin: 0 10px;
     text-decoration: none;
     color: white;
     text-decoration: none;
-}
-
-a {
+ }
+ 
+ 
+ a {
     color: white;
     text-decoration: none;
-}
-
-main {
+ }
+ 
+ 
+ main {
     padding: 2rem;
     text-align: center;
     position: center;
-}
-
-button {
-    background-color: #4CAF50;
+ }
+ 
+ 
+ button {
+    background-color: #0C3C26;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-}
-
-footer {
-    background-color: #333;
+ }
+ 
+ 
+ footer {
+    background-color: #000000;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 5px;
     position: fixed;
     width: 100%;
     bottom: 0;
-}
-
-form {
+ }
+ 
+ 
+ form {
     margin-bottom: 20px;
-}
-
-input, select {
+ }
+ 
+ 
+ input, select {
     margin: 5px;
     padding: 5px;
     width: calc(100% - 10px);
     max-width: 300px;
-}
-
-#expenseList {
+ }
+ 
+ 
+ #expenseList {
     margin-top: 20px;
-}
-
-#expenseChart{
+ }
+ 
+ 
+ #expenseChart{
     position: center;
     margin-left: auto;
     margin-right: auto;
     height: 500px;
-}
-
-#chartContainer {
-    position: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 500px;
-    height: 500px;
-}
-
-#barChartContainer{
+ }
+ 
+ 
+ #chartContainer {
     position: center;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     max-width: 500px;
     height: 500px;
-}
-
-#budgetBarChart{
+ }
+ 
+ 
+ #barChartContainer{
+    position: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+ }
+ 
+ 
+ #budgetBarChart{
     position: center;
     margin-left: auto;
     margin-right: auto;
     height: 500px;
-}
+ }
 
-/* Desktop styles (default) */
-@media screen and (min-width: 1024px) {
+ #expandsthebottom{
+    position: center;
+    margin-left: auto;
+    margin-right:auto;
+    height: 200px
+ }
+ 
+ 
+ /* Desktop styles (default) */
+ @media screen and (min-width: 1024px) {
     main {
         max-width: 1200px;
         margin: 0 auto;
@@ -142,65 +163,79 @@ input, select {
         max-width: 500px;
         height: 500px;
     }
-}
-
-/* Tablet styles */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+ }
+ 
+ 
+ /* Tablet styles */
+ @media screen and (min-width: 768px) and (max-width: 1023px) {
     main {
         padding: 1.5rem;
     }
-
+ 
+ 
     #chartContainer {
         height: 400px;
     }
-
+ 
+ 
     #expenseChart{
         height: 400px;
     }
-
+ 
+ 
     #budgetChartContainer {
         height: 400px;
     }
-
+ 
+ 
     #budgetBarChart{
         height: 400px;
     }
-}
-
-/* Phone styles */
-@media screen and (max-width: 767px) {
+ }
+ 
+ 
+ /* Phone styles */
+ @media screen and (max-width: 767px) {
     header {
         padding: 0.5rem;
     }
-
+ 
+ 
     nav ul {
         flex-direction: column;
     }
-
+ 
+ 
     nav ul li {
         margin: 5px 0;
     }
-
+ 
+ 
     main {
         padding: 1rem;
     }
-
+ 
+ 
     input, select {
         width: 100%;
     }
-
+ 
+ 
     #chartContainer {
         height: 300px;
     }
-
+ 
+ 
     #budgetChartContainer {
         height: 300px;
     }
-
+ 
+ 
     #expenseChart{
         height: 300px;
     }
     #budgetBarChart{
         height: 300px;
     }
-}
+ }
+ 
